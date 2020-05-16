@@ -19,6 +19,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 class BookmarkSerializer(serializers.ModelSerializer):
 	class Meta:
 		model = Bookmark
+		# fields = '__all__'
 		fields = [
 			'id',
 			'title',
@@ -26,11 +27,20 @@ class BookmarkSerializer(serializers.ModelSerializer):
 			'source_name',
 		]
 
-		read_only_fields = ["id", "is_active"]
+		read_only_fields = ["id", "is_active"]	
 
 
 
 class CustomerBookmarkSerializer(serializers.ModelSerializer):
+	customer = CustomerSerializer(read_only=True, many=True)
+	bookmark = BookmarkSerializer(read_only=True, many=True)
 	class Meta:
 		model = CustomerBookmark
-		fields = '__all__'
+		fields = [
+			'id',
+			'customer',
+			'bookmark',
+		]
+		# fields = '__all__'
+
+		# write_only_fields = ('customer', 'bookmark')

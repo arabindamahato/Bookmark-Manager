@@ -1,7 +1,9 @@
 from django.db import models
 
-
 # Create your models here.
+# from datetime import datetime, timedelta
+
+
 
 class Customer(models.Model):	
 	GENDER_CHOICES = (
@@ -39,9 +41,13 @@ class Bookmark(models.Model):
 
 
 class CustomerBookmark(models.Model):
-	customer_id = models.ForeignKey(Customer, on_delete=models.CASCADE)
-	bookmark_id = models.ForeignKey(Bookmark, on_delete=models.CASCADE)
+	customer = models.ForeignKey(Customer, on_delete=models.CASCADE, null=True, related_name="customer")
+	bookmark = models.ForeignKey(Bookmark, on_delete=models.CASCADE, null=True, related_name="bookmark")
 
+	created_at = models.DateTimeField(auto_now_add=True)
+	updated_at = models.DateTimeField(auto_now=True)
+	is_active = models.BooleanField(default=True)
+	
 
 
 

@@ -64,26 +64,25 @@ class BookmarkDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class CustomerBookmarkList(generics.ListAPIView):
-	""" All bookmark list """
 	queryset = CustomerBookmark.objects.all()
 	serializer_class = CustomerBookmarkSerializer
 
-	ordering_fields = ['id',]
+	# ordering_fields = ['id',]
 
-	search_fields = [
-				'customer_id',
-				'bookmark_id',
-	]
+	# search_fields = [
+	# 			'id',
+	# ]
 
 
 class CustomerBookmarkCreate(generics.CreateAPIView):
 	queryset = CustomerBookmark.objects.all()
 	serializer_class = CustomerBookmarkSerializer
 
-	ordering_fields = ['id',]
+	# ordering_fields = ['id',]
 
-	search_fields = [
-				'customer_id',
-				'bookmark_id',
-	]
+	# search_fields = [
+	# 			# 'customer_id',
+	# 			# 'bookmark_id',
+	# 			'id',
+	# ]
 

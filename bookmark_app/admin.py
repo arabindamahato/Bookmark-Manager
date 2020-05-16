@@ -1,5 +1,9 @@
 from django.contrib import admin
-from bookmark_app.models import Customer, Bookmark, CustomerBookmark
+from bookmark_app.models import (
+								Customer, 
+								Bookmark, 
+								CustomerBookmark, 
+								)
 admin.site.site_header = "Bookmark Manager"
 
 # Register your models here.
@@ -24,7 +28,7 @@ class CustomerAdmin(admin.ModelAdmin):
 	list_filter = ['name',]
 
 	fields = [
-		# while creating user these field comes
+		# while creating customer these field comes
 		'name',
 		'email',
 		'contact_no',
@@ -54,11 +58,10 @@ class BookmarkAdmin(admin.ModelAdmin):
 	list_filter = ['title',]
 
 	fields = [
-		# while creating user these field comes
+		# while creating bookmark these field comes
 		'title',
 		'url',
 		'source_name',
-		# 'bookmark_date',
 	]
 
 
@@ -66,17 +69,28 @@ class BookmarkAdmin(admin.ModelAdmin):
 class CustomerBookmarkAdmin(admin.ModelAdmin):
 	list_display = [
 		"id",
-		"customer_id",
-		"bookmark_id",
+		"customer",
+		"bookmark",
 	]
 
 	list_per_page = 5
 
+	list_display_links = [
+		"id",
+		"customer",
+		"bookmark",
+	]
 
-	list_display_links = ['id','customer_id','bookmark_id']
+	search_fields = ['id', 'customer', 'bookmark']
 
-	
-	list_filter = ['id',]
+	list_filter = ['customer',]
+
+	fields = [
+		# while creating customerBookmark  these field appear
+		'customer',
+		'bookmark',
+		'is_active',
+	]
 
 
 admin.site.register(Customer, CustomerAdmin)
