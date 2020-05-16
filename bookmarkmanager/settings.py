@@ -31,12 +31,20 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    # Django app
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # Third party app
+    'rest_framework',
+
+    # My app
+    'bookmark_app',
+    
 ]
 
 MIDDLEWARE = [
@@ -118,3 +126,15 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
+
+
+REST_FRAMEWORK = {
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5,
+    'DEFAULT_FILTER_BACKENDS':('rest_framework.filters.SearchFilter',
+                                'rest_framework.filters.OrderingFilter',
+                            ),
+    'SEARCH_PARAM':'title_contains', 
+    'ORDERING_PARAM':'sort_by',
+
+}
