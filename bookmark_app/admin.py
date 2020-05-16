@@ -1,5 +1,5 @@
 from django.contrib import admin
-from bookmark_app.models import Customer, Bookmark
+from bookmark_app.models import Customer, Bookmark, CustomerBookmark
 admin.site.site_header = "Bookmark Manager"
 
 # Register your models here.
@@ -63,6 +63,22 @@ class BookmarkAdmin(admin.ModelAdmin):
 
 
 
+class CustomerBookmarkAdmin(admin.ModelAdmin):
+	list_display = [
+		"id",
+		"customer_id",
+		"bookmark_id",
+	]
+
+	list_per_page = 5
+
+
+	list_display_links = ['id','customer_id','bookmark_id']
+
+	
+	list_filter = ['id',]
+
 
 admin.site.register(Customer, CustomerAdmin)
 admin.site.register(Bookmark, BookmarkAdmin)
+admin.site.register(CustomerBookmark, CustomerBookmarkAdmin)

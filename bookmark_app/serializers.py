@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from bookmark_app.models import Customer, Bookmark
+from bookmark_app.models import Customer, Bookmark, CustomerBookmark
 
 class CustomerSerializer(serializers.ModelSerializer):
 	class Meta:
@@ -27,3 +27,10 @@ class BookmarkSerializer(serializers.ModelSerializer):
 		]
 
 		read_only_fields = ["id", "is_active"]
+
+
+
+class CustomerBookmarkSerializer(serializers.ModelSerializer):
+	class Meta:
+		model = CustomerBookmark
+		fields = '__all__'

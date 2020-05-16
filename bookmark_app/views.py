@@ -1,7 +1,7 @@
 from django.shortcuts import render
 from rest_framework import generics
-from bookmark_app.models import Customer, Bookmark
-from bookmark_app.serializers import CustomerSerializer, BookmarkSerializer
+from bookmark_app.models import Customer, Bookmark, CustomerBookmark
+from bookmark_app.serializers import CustomerSerializer, BookmarkSerializer, CustomerBookmarkSerializer
 
 # Create your views here.
  
@@ -30,8 +30,10 @@ class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
 			]
 
 
-class BookmarkCreate(generics.CreateAPIView):
-	"""Create Bookmark"""
+
+
+class BookmarkList(generics.ListCreateAPIView):
+	"""Browse all  Bookmark"""
 	queryset = Bookmark.objects.all()
 	serializer_class = BookmarkSerializer
 
@@ -44,7 +46,9 @@ class BookmarkCreate(generics.CreateAPIView):
 			]
 
 
-class BookmarkBrowse(generics.RetrieveAPIView):
+
+
+class BookmarkDetail(generics.RetrieveUpdateDestroyAPIView):
 	"""Browse a particular Bookmark by using id"""
 	queryset = Bookmark.objects.all()
 	serializer_class = BookmarkSerializer
@@ -59,15 +63,27 @@ class BookmarkBrowse(generics.RetrieveAPIView):
 
 
 
-class BookmarkList(generics.ListAPIView):
-	"""Browse all  Bookmark"""
-	queryset = Bookmark.objects.all()
-	serializer_class = BookmarkSerializer
+class CustomerBookmarkList(generics.ListAPIView):
+	""" All bookmark list """
+	queryset = CustomerBookmark.objects.all()
+	serializer_class = CustomerBookmarkSerializer
 
 	ordering_fields = ['id',]
 
 	search_fields = [
-				'title', 
-				'url',
-				'source_name',
-			]
+				'customer_id',
+				'bookmark_id',
+	]
+
+
+class CustomerBookmarkCreate(generics.CreateAPIView):
+	queryset = CustomerBookmark.objects.all()
+	serializer_class = CustomerBookmarkSerializer
+
+	ordering_fields = ['id',]
+
+	search_fields = [
+				'customer_id',
+				'bookmark_id',
+	]
+

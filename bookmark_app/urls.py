@@ -7,8 +7,12 @@ urlpatterns = [
     path('customer/<pk>/', views.CustomerDetail.as_view()),
 
     # bookmark related url
-    path('create/', views.BookmarkCreate.as_view()),
-    path('browse/', views.BookmarkList.as_view()),
-    path('browse/<pk>/', views.BookmarkBrowse.as_view()),
+    path('bookmark/', views.BookmarkList.as_view()),
+    path('bookmark/<pk>/', views.BookmarkDetail.as_view()),
+
+    # customerBookmark url
+    path('create/', views.CustomerBookmarkCreate.as_view()),
+    path('browse/', views.CustomerBookmarkList.as_view()),
+
 
 ]
