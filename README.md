@@ -32,3 +32,46 @@
 </p>
 
 
+
+
+##### For create and listing all Customer   :
+- http://localhost:8000/api/customer/
+
+###### Screenshot
+
+<p align="center"> 
+<img src="Screenshots/customer_create.png">
+</p>
+
+
+
+##### For Retrieve, Update, PartialUpdate and Delete Customer :
+- http://localhost:8000/api/customer/1/
+
+###### Screenshot
+
+<p align="center"> 
+<img src="Screenshots/customer_detail.png">
+</p>
+
+
+
+##### For create and listing all Bookmark   :
+- http://localhost:8000/api/bookmark/
+
+###### Screenshot
+
+<p align="center"> 
+<img src="Screenshots/bookmark_create.png">
+</p>
+
+
+
+##### For Retrieve, Update, PartialUpdate and Delete Bookmark :
+- http://localhost:8000/api/bookmark/1/ 
+
+###### Screenshot
+
+<p align="center"> 
+<img src="Screenshots/bookmark_detail.png">
+</p>
