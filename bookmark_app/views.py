@@ -67,22 +67,21 @@ class CustomerBookmarkList(generics.ListAPIView):
 	queryset = CustomerBookmark.objects.all()
 	serializer_class = CustomerBookmarkSerializer
 
-	# ordering_fields = ['id',]
+	ordering_fields = [
+				'id',
+			]
 
-	# search_fields = [
-	# 			'id',
-	# ]
+	search_fields = [
+							
+				'customer__id',
+				'customer__latitude',
+				'customer__longitude',
+				'bookmark__source_name',
+	]
 
 
 class CustomerBookmarkCreate(generics.CreateAPIView):
 	queryset = CustomerBookmark.objects.all()
 	serializer_class = CustomerBookmarkSerializer
 
-	# ordering_fields = ['id',]
-
-	# search_fields = [
-	# 			# 'customer_id',
-	# 			# 'bookmark_id',
-	# 			'id',
-	# ]
-
+	

@@ -32,8 +32,8 @@ class BookmarkSerializer(serializers.ModelSerializer):
 
 
 class CustomerBookmarkSerializer(serializers.ModelSerializer):
-	customer = CustomerSerializer(read_only=True, many=True)
-	bookmark = BookmarkSerializer(read_only=True, many=True)
+	customer = CustomerSerializer()
+	bookmark = BookmarkSerializer()
 	class Meta:
 		model = CustomerBookmark
 		fields = [
