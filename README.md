@@ -1,16 +1,17 @@
 # Bookmark-Manager
 
-## If you want to run this project in your system please follow the steps below :
 
-1. Clone this project 
-2. Create a virtual environment
-3. Run the Requirements.txt (pip install -r requirements.txt)
-4. Run the migrations
-5. create superuser for accessing admin panel
-6. Run the Django Server
+## If you want to run this project in your system please follow the steps below :
+ 
+1. Create a virtual environment in your system.
+2. Clone this project.
+3. Run the Requirements.txt (pip install -r requirements.txt) .
+4. Run the migrations.
+5. create superuser for accessing admin panel.
+6. Run the Django Server.
 7. Follow the listed Url for accessing the Project Properly . 
 
-	- endpoint which allows storing of any Customer's bookmark
+	- Endpoint which allows storing of any Customer's bookmark
 		- http://localhost:8000/api/create/
 
 	- Endpoint which allows browsing and filtration of API endpoint with the following query parameters: 
