@@ -14,7 +14,7 @@
 		- http://localhost:8000/api/create/
 
 	- Endpoint which allows browsing and filtration of API endpoint with the following query parameters: 
-		- customer_id, latitude, longitude, source_name, title_contains etc.
+	customer_id, latitude, longitude, source_name, title_contains etc.
 			- http://localhost:8000/api/browse/
 
 	- http://localhost:8000/api/customer/
