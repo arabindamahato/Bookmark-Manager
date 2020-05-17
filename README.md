@@ -18,17 +18,17 @@
 ###### Screenshot
 
 <p align="center"> 
-<img src="Screenshot/create.png">
+<img src="Screenshots/create.png">
 </p>
 
 
-##### For Browse Bookmark
+##### For Browse Bookmark  :
 - http://localhost:8000/api/browse/
 
 ###### Screenshot
 
 <p align="center"> 
-<img src="Screenshot/browse.png">
+<img src="Screenshots/browse.png">
 </p>
 
 
