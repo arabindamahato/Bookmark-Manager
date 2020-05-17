@@ -8,12 +8,23 @@
 4. Run the migrations
 5. Run the Django Server
 6. Follow the listed Url for accessing the Project Properly . 
-- You can use amy browser as well as postman .
+	- http://localhost:8000/api/create/
+	- http://localhost:8000/api/browse/
+
+	- http://localhost:8000/api/customer/
+	- http://localhost:8000/api/customer/1/
+
+	- http://localhost:8000/api/bookmark/
+	- http://localhost:8000/api/bookmark/1/
+
+
+
+- You can use any browser as well as postman .
 
 ### Using Browser
 
-##### For Create Bookmark :
-- http://localhost:8000/api/create/
+##### For Create Bookmark :- http://localhost:8000/api/create/
+
 
 ###### Screenshot
 
