@@ -17,16 +17,22 @@
 	customer_id, latitude, longitude, source_name, title_contains etc.
 		- http://localhost:8000/api/browse/
 
-	- http://localhost:8000/api/customer/
-	- http://localhost:8000/api/customer/1/
+	- Endpoint which allows storing Customer.
+		- http://localhost:8000/api/customer/
 
-	- http://localhost:8000/api/bookmark/
-	- http://localhost:8000/api/bookmark/1/
+	- Endpoint which allows Detail and List view of all customer and can perform Update and delete operation.
+		- http://localhost:8000/api/customer/1/
+
+	- Endpoint which allows storing Bookmark .
+		- http://localhost:8000/api/bookmark/
+
+	- Endpoint which allows Detail and List view of all customer and can perform Update and delete operation.
+		- http://localhost:8000/api/bookmark/1/
 
 * `You can check filtering functionality by clicking Filter Button`
 * `You can also check searching functionality by clicking Search bar `
 
-###### All Functions are working properly
+###### I am sure all functions will be working properly.
 
 ### You can use any Browser .
 
