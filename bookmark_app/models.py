@@ -12,6 +12,7 @@ class Customer(models.Model):
         ("O", "Other"),
     )
 
+	customer_id = models.CharField(default="C001", unique=True, blank=True, max_length=10)
 	name = models.CharField(default="", blank=True, max_length=255)
 	email = models.EmailField(unique=True, blank=False, null=False)
 	contact_no = models.CharField(max_length=10, blank=True, null=True)
@@ -30,6 +31,7 @@ class Customer(models.Model):
 
 class Bookmark(models.Model):
 	title = models.CharField(default="", blank=True, max_length=255)
+	title_contains = models.CharField(default="", blank=True, max_length=255)
 	url = models.URLField(max_length=200)
 	source_name = models.CharField(default="", blank=True, max_length=255)
 	created_at = models.DateTimeField(auto_now_add=True)

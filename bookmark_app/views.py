@@ -12,6 +12,7 @@ class CustomerList(generics.ListCreateAPIView):
 	ordering_fields = ['id',]
 
 	search_fields = [
+				'customer_id', 
 				'name', 
 				'email',
 				'contact_no',
@@ -24,6 +25,7 @@ class CustomerDetail(generics.RetrieveUpdateDestroyAPIView):
 	ordering_fields = ['id',]
 
 	search_fields = [
+				'customer_id', 
 				'name', 
 				'email',
 				'contact_no',
@@ -41,6 +43,7 @@ class BookmarkList(generics.ListCreateAPIView):
 
 	search_fields = [
 				'title', 
+				'title_contains', 
 				'url',
 				'source_name',
 			]
@@ -57,6 +60,7 @@ class BookmarkDetail(generics.RetrieveUpdateDestroyAPIView):
 
 	search_fields = [
 				'title', 
+				'title_contains', 
 				'url',
 				'source_name',
 			]
@@ -68,15 +72,18 @@ class CustomerBookmarkList(generics.ListAPIView):
 	serializer_class = CustomerBookmarkSerializer
 
 	ordering_fields = [
-				'id',
+				'customer__id',							
+				# 'customer__latitude',
+				# 'customer__longitude',
+				# 'bookmark__source_name',
+				# 'bookmark__title_contains',
 			]
 
-	search_fields = [
-							
-				'customer__id',
+	search_fields = [	
+				'customer__id',						
 				'customer__latitude',
 				'customer__longitude',
-				'bookmark__source_name',
+				'bookmark__title_contains',
 	]
 
 

@@ -134,7 +134,7 @@ REST_FRAMEWORK = {
     'DEFAULT_FILTER_BACKENDS':('rest_framework.filters.SearchFilter',
                                 'rest_framework.filters.OrderingFilter',
                             ),
-    'SEARCH_PARAM':'title_contains', 
+    'SEARCH_PARAM':'search', 
     'ORDERING_PARAM':'sort_by',
 
 }

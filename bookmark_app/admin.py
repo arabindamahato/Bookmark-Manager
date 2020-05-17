@@ -9,6 +9,7 @@ admin.site.site_header = "Bookmark Manager"
 # Register your models here.
 class CustomerAdmin(admin.ModelAdmin):
 	list_display = [
+			'customer_id',
 			'name',
 			'email',
 			'contact_no',
@@ -19,16 +20,17 @@ class CustomerAdmin(admin.ModelAdmin):
 	list_per_page = 5
 
 
-	list_display_links = ['name','email']
+	list_display_links = ['customer_id','name','email']
 
 	list_editable = ['contact_no',]
 
-	search_fields = ['name', 'email', 'contact_no']
+	search_fields = ['customer_id','name', 'email', 'contact_no']
 
-	list_filter = ['name',]
+	list_filter = ['customer_id',]
 
 	fields = [
 		# while creating customer these field comes
+		'customer_id',
 		'name',
 		'email',
 		'contact_no',
@@ -41,6 +43,7 @@ class CustomerAdmin(admin.ModelAdmin):
 class BookmarkAdmin(admin.ModelAdmin):
 	list_display = [
 			'title',
+			'title_contains',
 			'url',
 			'source_name',
 			# 'bookmark_date',
@@ -49,7 +52,7 @@ class BookmarkAdmin(admin.ModelAdmin):
 	list_per_page = 5
 
 
-	list_display_links = ['title','url']
+	list_display_links = ['title','url', 'title_contains']
 
 	# list_editable = ['source_name',]
 
@@ -60,6 +63,7 @@ class BookmarkAdmin(admin.ModelAdmin):
 	fields = [
 		# while creating bookmark these field comes
 		'title',
+		'title_contains',
 		'url',
 		'source_name',
 	]

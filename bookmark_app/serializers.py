@@ -6,6 +6,7 @@ class CustomerSerializer(serializers.ModelSerializer):
 		model = Customer
 		fields = [
 			'id',
+			'customer_id',
 			'name',
 			'email',
 			'contact_no',
@@ -23,6 +24,7 @@ class BookmarkSerializer(serializers.ModelSerializer):
 		fields = [
 			'id',
 			'title',
+			'title_contains',
 			'url',
 			'source_name',
 		]
