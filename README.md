@@ -2,14 +2,20 @@
 
 ## If you want to run this project in your system please follow the steps below :
 
-1. Clone this project
+1. Clone this project 
 2. Create a virtual environment
-3. Run the Requirements.txt
+3. Run the Requirements.txt (pip install -r requirements.txt)
 4. Run the migrations
-5. Run the Django Server
-6. Follow the listed Url for accessing the Project Properly . 
-	- http://localhost:8000/api/create/
-	- http://localhost:8000/api/browse/
+5. create superuser for accessing admin panel
+6. Run the Django Server
+7. Follow the listed Url for accessing the Project Properly . 
+
+	- endpoint which allows storing of any Customer's bookmark
+		- http://localhost:8000/api/create/
+
+	- Endpoint which allows browsing and filtration of API endpoint with the following query parameters: 
+		- customer_id, latitude, longitude, source_name, title_contains etc.
+			- http://localhost:8000/api/browse/
 
 	- http://localhost:8000/api/customer/
 	- http://localhost:8000/api/customer/1/
@@ -17,11 +23,12 @@
 	- http://localhost:8000/api/bookmark/
 	- http://localhost:8000/api/bookmark/1/
 
+* `You can check filtering functionality by clicking Filter Button`
+* `You can also check searching functionality by clicking Search bar `
 
+###### All Functions are working properly
 
-- You can use any browser as well as postman .
-
-### Using Browser
+### You can use any Browser .
 
 ##### For Create Bookmark :- http://localhost:8000/api/create/
 
